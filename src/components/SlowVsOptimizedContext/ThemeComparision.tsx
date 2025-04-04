@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useMemo,
-} from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { RecoilRoot, atom, useRecoilValue, useSetRecoilState } from "recoil";
 import styles from "./ThemeComparison.module.scss";
 
@@ -32,7 +26,7 @@ const ThemeComparison = () => {
 // 🔹 Context Theme Component (With Memoized Context)
 const ContextThemeComponent = () => {
   const themeContext = useContext(ThemeContext);
-  const [renderCount, setRenderCount] = useState(1);
+  const [renderCount, _setRenderCount] = useState(1);
 
   useEffect(() => {
     console.log("ContextThemeComponent Rendered!");
@@ -56,7 +50,7 @@ const ContextThemeComponent = () => {
 const RecoilThemeComponent = () => {
   const theme = useRecoilValue(themeState); // ✅ Only reads state (prevents unnecessary re-renders)
   const setTheme = useSetRecoilState(themeState);
-  const [renderCount, setRenderCount] = useState(1);
+  const [renderCount, _setRenderCount] = useState(1);
 
   useEffect(() => {
     console.log("RecoilThemeComponent Rendered!");
@@ -81,7 +75,7 @@ const RecoilThemeComponent = () => {
 // 🔹 Context Counter (Should Not Re-Render On Theme Change)
 const ContextCounter = () => {
   const [count, setCount] = useState(0);
-  const [renderCount, setRenderCount] = useState(1);
+  const [renderCount, _setRenderCount] = useState(1);
 
   useEffect(() => {
     console.log("ContextCounter Rendered!");
@@ -100,7 +94,7 @@ const ContextCounter = () => {
 // 🔹 Recoil Counter (Should Not Re-Render On Theme Change)
 const RecoilCounter = () => {
   const [count, setCount] = useState(0);
-  const [renderCount, setRenderCount] = useState(1);
+  const [renderCount, _setRenderCount] = useState(1);
 
   useEffect(() => {
     console.log("RecoilCounter Rendered!");

@@ -61,7 +61,7 @@ export const FixedHeightList: React.FC = () => {
 
 // Variable height list component
 export const VariableHeightList: React.FC = () => {
-  const getItemSize = (index: number) => Math.floor(Math.random() * 100) + 50;
+  const getItemSize = (_index: number) => Math.floor(Math.random() * 100) + 50;
 
   return (
     <div>

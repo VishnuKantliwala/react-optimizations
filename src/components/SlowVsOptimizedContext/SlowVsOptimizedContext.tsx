@@ -1,14 +1,13 @@
 import React, {
   createContext,
+  memo,
+  useCallback,
   useContext,
-  useState,
   useEffect,
   useRef,
-  useCallback,
-  memo,
+  useState,
 } from "react";
 import styles from "./SlowVsOptimizedContext.module.scss"; // SCSS Modules
-import ThemeComparisonWithProviders from "./ThemeComparision";
 
 // 🚨 Unoptimized Context (Re-renders everything)
 const UnoptimizedThemeContext = createContext({
