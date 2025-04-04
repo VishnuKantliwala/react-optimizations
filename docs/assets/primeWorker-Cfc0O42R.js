@@ -1,0 +1,1 @@
+(function(){"use strict";self.onmessage=function(r){const{start:i,end:f}=r.data;let s=[];function n(t){if(t<2)return!1;for(let e=2;e<=Math.sqrt(t);e++)if(t%e===0)return!1;return!0}for(let t=i;t<=f;t++)n(t)&&s.push(t);postMessage(s)}})();
