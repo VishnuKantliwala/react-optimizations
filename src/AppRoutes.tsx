@@ -20,7 +20,7 @@ import SlowVsOptimizedContext from "./components/SlowVsOptimizedContext/SlowVsOp
 import SelectorComparison from "./components/SelectorComparison/SelectorComparison";
 import VirtualizedList from "./components/VirtualizedList/VirtualizedList";
 import AutoMemoization from "./components/AutoMemoization/AutoMemoization";
-
+import OptimisticTodo from "./components/OptimisticTodo/OptimisticTodo";
 export default function AppRoutes() {
   return (
     <Router>
@@ -59,6 +59,7 @@ export default function AppRoutes() {
             {/* React 19 Features */}
             {React.version.startsWith("19") && (
               <>
+                <Route path="/use-optimistic-ui" element={<OptimisticTodo />} />
                 <Route path="/react-compiler" element={<ReactCompiler />} />
                 <Route path="/asset-loading" element={<AssetLoading />} />
                 <Route

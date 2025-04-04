@@ -13,9 +13,9 @@ export default function Sidebar() {
         <li>
           <Link to="/cal">📅 Code splitting - Calendar</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/reselect">🔄 Reselect</Link>
-        </li>
+        </li> */}
 
         <li>
           <Link to="/concurrent-rendering">⚡ Concurrent Rendering</Link>
@@ -55,11 +55,15 @@ export default function Sidebar() {
         {React.version.startsWith("19") && (
           <>
             <li>
+              <Link to="/use-optimistic-ui">🔄 Use Optimistic UI</Link>
+            </li>
+            <li>
               <Link to="/react-compiler">🛠️ React Compiler</Link>
             </li>
             <li>
               <Link to="/auto-memoization">🔄 Auto Memoization</Link>
             </li>
+
             {/* <li>
               <Link to="/asset-loading">📂 Asset Loading</Link>
             </li>
