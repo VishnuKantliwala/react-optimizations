@@ -1,0 +1,12 @@
+@use "../../styles/main" as *;
+
+.container {
+  @include container;
+  background-color: $background-light;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}

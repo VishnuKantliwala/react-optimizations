@@ -1,0 +1,17 @@
+@use "sass:color";
+@use "../../styles/main" as *;
+
+.container {
+  padding: 20px;
+  background-color: color.scale($background-dark, $lightness: 10%);
+  color: $text-color;
+  border-radius: 8px;
+}
+
+button {
+  background-color: $secondary-color;
+  border: none;
+  padding: 10px;
+  color: $text-color;
+  cursor: pointer;
+}

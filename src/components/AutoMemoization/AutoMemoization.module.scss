@@ -1,0 +1,135 @@
+@use "../../styles/main" as *;
+
+.container {
+  @include container;
+  background-color: $background-dark;
+  color: $text-color;
+  padding: 2rem;
+
+  h1 {
+    color: $primary-color;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    color: $secondary-color;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .infoPanel {
+    background-color: lighten($background-dark, 5%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid $primary-color;
+    margin-bottom: 2rem;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      span:first-child {
+        color: lighten($text-color, 20%);
+      }
+
+      span:last-child {
+        color: $success-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      @include button($primary-color);
+      flex: 1;
+    }
+  }
+
+  .explanation {
+    background-color: lighten($background-dark, 5%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid $success-color;
+    margin-bottom: 2rem;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.5;
+
+        strong {
+          color: $primary-color;
+          margin-right: 0.5rem;
+        }
+
+        &:before {
+          content: "✓";
+          color: $success-color;
+          position: absolute;
+          left: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .itemsList {
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .itemsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .item {
+    background-color: lighten($background-dark, 5%);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid $primary-color;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &:hover {
+      background-color: lighten($background-dark, 10%);
+      transform: translateY(-2px);
+    }
+
+    &.selected {
+      border-color: $success-color;
+      background-color: lighten($background-dark, 15%);
+    }
+
+    span:first-child {
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    span:last-child {
+      color: lighten($text-color, 20%);
+    }
+  }
+}

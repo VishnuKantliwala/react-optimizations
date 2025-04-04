@@ -1,0 +1,46 @@
+@use "../../styles/main" as *;
+
+.card {
+  @include container;
+  background-color: $background-dark;
+  color: $text-color;
+  margin: 1rem 0;
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    color: $primary-color;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .details {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span:first-child {
+        color: lighten($text-color, 20%);
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      @include button($primary-color);
+      flex: 1;
+    }
+  }
+}

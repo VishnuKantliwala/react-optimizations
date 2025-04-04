@@ -1,0 +1,133 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.selector-comparison {
+  @include container;
+  background-color: $background-light;
+  color: $text-color;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .performance-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .stat-box {
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: $background-dark;
+      border: 1px solid $primary-color;
+
+      h3 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          &:first-child {
+            color: lighten($text-color, 20%);
+          }
+
+          &.highlight {
+            color: $success-color;
+            font-weight: bold;
+          }
+
+          &.calculating {
+            color: $warning-color;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      @include button($primary-color);
+      flex: 1;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+  }
+
+  .key-points {
+    background-color: $background-dark;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid $success-color;
+
+    h3 {
+      color: $success-color;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+        line-height: 1.5;
+
+        strong {
+          color: $primary-color;
+          margin-right: 0.5rem;
+        }
+
+        &:before {
+          content: "✓";
+          color: $success-color;
+          position: absolute;
+          left: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

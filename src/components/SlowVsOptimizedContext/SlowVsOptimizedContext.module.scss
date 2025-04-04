@@ -1,0 +1,72 @@
+// 🔥 Global Styles
+.comparison {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.section {
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  width: 45%;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+// 🚨 Unoptimized vs ✅ Optimized Styling
+.unoptimized {
+  background-color: #ffdddd;
+  color: #2b2b2b;
+}
+
+.optimized {
+  background-color: #ddffdd;
+  color: #2b2b2b;
+}
+
+// 🔥 Stack Component Styling
+.stack {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #aaaaaa;
+  transition: background-color 0.3s ease-in-out;
+}
+
+// 🔘 Button Styling
+.button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+// 🔥 Flashing Animation for Re-Renders
+@keyframes flash {
+  0% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+
+.flash {
+  animation: flash 0.3s ease-in-out;
+}

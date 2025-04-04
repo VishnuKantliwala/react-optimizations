@@ -1,0 +1,10 @@
+@use "../../styles/main" as *;
+
+.container {
+  @include container;
+  background-color: $background-dark;
+
+  button {
+    @include button($warning-color);
+  }
+}

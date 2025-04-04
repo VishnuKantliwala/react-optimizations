@@ -1,0 +1,7 @@
+@use "../../styles/main" as *;
+
+.home {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+}
